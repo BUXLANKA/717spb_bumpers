@@ -13,8 +13,8 @@ function RECIPE:InjectSpawner(entclass)
         [1] = "540maskType",
         [2] = "Spawner.540.MaskType",
         [3] = "List",
-        [4] = {"1-4-1", "1-3-1", "2-2-2n", "Default"}
-    }, false)
+        [4] = {"Random", "1-4-1", "1-3-1", "2-2-2n", "Default"}
+    }, true)
 end
 
 function RECIPE:Inject(ent, entclass)

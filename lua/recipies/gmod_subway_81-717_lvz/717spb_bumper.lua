@@ -8,8 +8,8 @@ function RECIPE:InjectSpawner(entclass)
         [1] = "vlzBumpType",
         [2] = "Spawner.717.bumptype",
         [3] = "List",
-        [4] = {"type-1", "type-2", "type-3"}
-    })
+        [4] = {"Random", "type-1", "type-2", "type-3"}
+    }, true)
 end
 
 function RECIPE:Inject(ent, entclass)

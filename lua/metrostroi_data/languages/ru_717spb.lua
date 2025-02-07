@@ -1,9 +1,10 @@
 return [[
 [ru]
 Entities.gmod_subway_81-717_lvz_custom.Spawner.vlzBumpType.Name = Тип бампера
-Entities.gmod_subway_81-717_lvz_custom.Spawner.vlzBumpType.1 = Тип 1
-Entities.gmod_subway_81-717_lvz_custom.Spawner.vlzBumpType.2 = Тип 2
-Entities.gmod_subway_81-717_lvz_custom.Spawner.vlzBumpType.3 = Без бампера
+Entities.gmod_subway_81-717_lvz_custom.Spawner.vlzBumpType.1 = @[Common.Spawner.Random]
+Entities.gmod_subway_81-717_lvz_custom.Spawner.vlzBumpType.2 = Тип 1
+Entities.gmod_subway_81-717_lvz_custom.Spawner.vlzBumpType.3 = Тип 2
+Entities.gmod_subway_81-717_lvz_custom.Spawner.vlzBumpType.4 = Без бампера
 
 Entities.gmod_subway_81-717_lvz_custom.Spawner.PassTexture.Name = @[Common.Spawner.PassTexture]
 Entities.gmod_subway_81-717_lvz_custom.Spawner.CabTexture.Name = @[Common.Spawner.CabTexture]
@@ -28,4 +29,5 @@ Entities.gmod_subway_81-717_lvz_custom.Spawner.WagonType.Name = @[Spawner.717.Bo
 Entities.gmod_subway_81-717_lvz_custom.Spawner.SeatType.Name = lol (?)
 
 Entities.gmod_subway_81-717_lvz_custom.Spawner.540maskType.Name = Тип маски
+Entities.gmod_subway_81-717_lvz_custom.Spawner.540maskType.1 = @[Common.Spawner.Random]
 ]]
