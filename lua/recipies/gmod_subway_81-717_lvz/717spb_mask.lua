@@ -1,0 +1,65 @@
+MEL.DefineRecipe("717spb_mask", "gmod_subway_81-717_lvz")
+RECIPE.Description = "This mod add bumpers for 81-717 SPB"
+
+local root_model = "models/mask/"
+local metrostroi_model = "models/metrostroi_train/81-717/"
+
+function RECIPE:InjectSpawner(entclass)
+    MEL.AddSpawnerField(entclass, {
+        [1] = "540maskType",
+        [2] = "Spawner.540.MaskType",
+        [3] = "List",
+        [4] = {"1-4-1", "1-3-1", "2-2-2n", "Default"}
+    }, false)
+
+    MEL.RemoveSpawnerField(entclass, "MaskType")
+end
+
+function RECIPE:Inject(ent, entclass)
+
+    MEL.NewClientProp(ent, "StockMask", {
+        model = metrostroi_model .. "mask_spb_222.mdl",
+        modelcallback = function(wagon, cent)
+            local models = {
+                metrostroi_model .. "mask_spb_222.mdl",
+                metrostroi_model .. "mask_22.mdl",
+                metrostroi_model .. "mask_22s.mdl"
+            }
+            return models[wagon:GetNW2Int("540maskType")]
+        end,
+        pos = Vector(0,0,0),
+        ang = Angle(0,0,0)
+    }, "540maskType")
+
+    MEL.NewClientProp(ent, "540mask", {
+        model = root_model .. "540_141.mdl",
+        modelcallback = function(wagon, cent)
+            local models = {
+                root_model .. "540_141.mdl",
+                root_model .. "540_131.mdl",
+                root_model .. "540_222.mdl"
+            }
+            return models[wagon:GetNW2Int("540maskType")]
+        end,
+        pos = Vector(0,0,0),
+        ang = Angle(0,-90,0)
+    }, "540maskType")
+
+    MEL.UpdateCallback(ent, "StockMask", function(ent, cent)
+        if ent:GetNW2Int("540maskType") == 4 then cent:SetNoDraw(false) else cent:SetNoDraw(true) end
+    end)
+    MEL.UpdateCallback(ent, "540mask", function(ent, cent)
+        if ent:GetNW2Int("540maskType") <= 3 then cent:SetNoDraw(false) else cent:SetNoDraw(true) end
+    end)
+
+
+
+
+
+    -- MEL.UpdateCallback(ent, "StockMask", function(ent, cent)
+    --     if ent:GetNW2Int("540maskType") > 1 then cent:SetNoDraw(true) else cent:SetNoDraw(true) end
+    -- end)
+    -- MEL.UpdateCallback(ent, "540mask", function(ent, cent)
+    --     if ent:GetNW2Int("540maskType") == 1 then cent:SetNoDraw(true) else cent:SetNoDraw(true) end
+    -- end)
+end
