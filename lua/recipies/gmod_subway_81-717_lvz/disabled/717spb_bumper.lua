@@ -30,4 +30,12 @@ function RECIPE:Inject(ent, entclass)
         local bt = ent:GetNW2Int("vlzBumpType")
         if bt == 3 then cent:SetNoDraw(true) end
     end)
+
+
+    -- Metrostroi Bykov Extensions adaptation --
+    local SPBlogo = "mlogo"
+    MEL.UpdateCallback(ent, SPBlogo, function(ent, cent) 
+        if ent:GetNW2Int("vlzBumpType") == 1 then
+            cent:SetNoDraw(true) end
+    end, "vlzBumpType")
 end
