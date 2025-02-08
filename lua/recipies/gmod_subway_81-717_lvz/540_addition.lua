@@ -104,6 +104,6 @@ function RECIPE:Inject(ent, entclass)
     end, "540maskType")
 
     MEL.UpdateCallback(ent, SPBlogo, function(ent, cent)
-        if ent:GetNW2Int("vlzBumpType") == 3 then cent:SetNoDraw(false) else cent:SetNoDraw(true) end
+        if ent:GetNW2Int("vlzBumpType") >= 3 or ent:GetNW2Int("540maskType") == 4 then cent:SetNoDraw(false) else cent:SetNoDraw(true) end
     end, "vlzBumpType")
 end
